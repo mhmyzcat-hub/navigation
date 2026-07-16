@@ -1,0 +1,345 @@
+
+/* =========================
+   Desktop
+========================= */
+
+@media (max-width:1200px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:48px;
+
+    }
+
+    .hero-right{
+
+        max-width:720px;
+
+    }
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width:992px){
+
+    .navbar{
+
+        height:auto;
+
+        padding:18px 0;
+
+        flex-wrap:wrap;
+
+        gap:20px;
+
+    }
+
+    .menu{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:18px;
+
+    }
+
+    .hero{
+
+        padding:70px 0;
+
+    }
+
+    .hero h1{
+
+        font-size:46px;
+
+        line-height:1.15;
+
+    }
+
+    .hero-search{
+
+        flex-direction:column;
+
+    }
+
+    .hero-search button{
+
+        width:100%;
+
+        height:56px;
+
+    }
+
+    .hero-card{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .section-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:18px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+    }
+
+    .menu{
+
+        justify-content:flex-start;
+
+    }
+
+    .hero{
+
+        padding:56px 0;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn-primary,
+
+    .btn-secondary{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:18px;
+
+    }
+
+    .copy-btn{
+
+        width:100%;
+
+    }
+
+    .card-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+
+    }
+
+    .card-link{
+
+        width:100%;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+    }
+
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width:480px){
+
+    .logo-mark{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:18px;
+
+    }
+
+    .logo-text h2{
+
+        font-size:18px;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .section-header h2{
+
+        font-size:26px;
+
+    }
+
+    .hero-search input{
+
+        height:54px;
+
+        font-size:15px;
+
+    }
+
+    .announcement-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .announcement-icon{
+
+        width:54px;
+
+        height:54px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .card-icon{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:24px;
+
+    }
+
+    .faq-question{
+
+        padding:18px;
+
+        font-size:15px;
+
+    }
+
+    .faq-answer{
+
+        padding:0 18px 18px;
+
+    }
+
+    .rules-box{
+
+        padding:22px;
+
+    }
+
+}
+
+/* =========================
+   Large Screen
+========================= */
+
+@media (min-width:1600px){
+
+    :root{
+
+        --max-width:1440px;
+
+    }
+
+    .hero h1{
+
+        font-size:68px;
+
+    }
+
+    .card-grid{
+
+        grid-template-columns:
+        repeat(auto-fill,minmax(340px,1fr));
+
+    }
+
+}
