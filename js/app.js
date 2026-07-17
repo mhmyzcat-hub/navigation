@@ -130,8 +130,6 @@ function initNavigation() {
 }
 
 
-let toastTimer = null;
-
 
 function showToast(message) {
 
