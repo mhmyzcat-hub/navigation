@@ -309,8 +309,8 @@ a {
 }
 
 .announcement-badge.pinned {
-    background: #fee2e2;
-    color: #ef4444;
+    background: #fff4d8;
+    color: #9a6b12;
 }
 
 .announcement-badge.new {
@@ -654,19 +654,14 @@ a {
     line-height: 1;
 }
 
-/* 微信 */
-.contact-card:nth-child(1) .contact-card-icon {
-    background: #e8f8ee;
+/* 微信：低饱和青绿色 */
+.contact-card-copy .contact-card-icon {
+    background: #edf7f4;
 }
 
-/* 电话 */
-.contact-card:nth-child(2) .contact-card-icon {
-    background: #eef4ff;
-}
-
-/* 邀请码 */
-.contact-card:nth-child(3) .contact-card-icon {
-    background: #fff7e8;
+/* 电话：柔和灰蓝色 */
+.contact-card-phone .contact-card-icon {
+    background: #eff4fa;
 }
 
 .contact-card-body {
@@ -715,22 +710,34 @@ a {
 
 }
 
-.contact-card:nth-child(1)
-.contact-action-button {
-    background: #eaf9f0;
-    color: #16a34a;
+.contact-card-copy .contact-action-button {
+    background: #edf7f4;
+    color: #287d70;
 }
 
-.contact-card:nth-child(2)
-.contact-action-button {
-    background: #fff0f1;
-    color: #ef4444;
+.contact-card-phone .contact-action-button {
+    background: #eff4fa;
+    color: #3f6592;
 }
 
-.contact-card:nth-child(3)
-.contact-action-button {
-    background: #fff7e6;
-    color: #f59e0b;
+.contact-card-copy .contact-action-button:hover {
+    background: #e2f2ed;
+}
+
+.contact-card-phone .contact-action-button:hover {
+    background: #e4edf7;
+}
+
+body.dark .contact-card-copy .contact-card-icon,
+body.dark .contact-card-copy .contact-action-button {
+    background: #223b38;
+    color: #8ed0c2;
+}
+
+body.dark .contact-card-phone .contact-card-icon,
+body.dark .contact-card-phone .contact-action-button {
+    background: #26364a;
+    color: #a9c4e3;
 }
 
 .list-section-grid {

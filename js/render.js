@@ -254,7 +254,7 @@ function createContactSection(category) {
 
         const card = document.createElement("article");
 
-        card.className = "contact-card";
+        card.className = "contact-card contact-card-" + item.action.type;
         card.tabIndex = 0;
 
         card.innerHTML = `
