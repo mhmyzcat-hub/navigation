@@ -199,95 +199,189 @@ a {
 
 .notice-page {
     min-height: 100vh;
-    padding: 48px 20px;
+    padding: 36px 20px 72px;
     background: var(--background);
 }
 
 .notice-article {
-    width: min(820px, 100%);
+    width: min(900px, 100%);
     margin: 0 auto;
-    padding: 38px 42px;
+    padding: 42px 56px 54px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(23, 42, 76, 0.07);
 }
 
 .notice-back {
     display: inline-flex;
-    margin-bottom: 26px;
-    color: var(--primary);
+    align-items: center;
+    margin-bottom: 38px;
+    color: var(--muted);
     font-size: 13px;
     font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.notice-back:hover {
+    color: var(--primary);
+}
+
+.notice-header {
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.notice-label {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 5px 9px;
+    border-radius: 6px;
+    background: #edf4ff;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
 }
 
 .notice-article h1 {
-    margin-bottom: 14px;
-    font-size: clamp(24px, 4vw, 34px);
-    line-height: 1.35;
-    letter-spacing: -0.03em;
+    margin: 0 0 15px;
+    max-width: 760px;
+    font-size: clamp(27px, 4vw, 40px);
+    line-height: 1.28;
+    letter-spacing: -0.035em;
 }
 
 .notice-date {
-    margin-bottom: 30px;
+    margin: 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .notice-lead {
-    margin-bottom: 24px;
-    padding: 16px 18px;
-    border-left: 4px solid var(--primary);
-    border-radius: 0 10px 10px 0;
-    background: #f4f8ff;
+    margin: 32px 0 36px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--primary);
+    background: #f6f9fe;
+    color: var(--text);
     font-weight: 700;
-    line-height: 1.8;
+    line-height: 1.75;
 }
 
 .notice-article p {
-    margin: 0 0 20px;
+    margin: 0;
     color: #3d4858;
     font-size: 15px;
-    line-height: 1.95;
+    line-height: 1.85;
 }
 
-.notice-action-box {
-    margin-top: 28px;
-    padding: 20px;
-    border: 1px solid #d7e4fa;
-    border-radius: 13px;
-    background: #f7faff;
+.notice-content h2 {
+    margin: 0 0 18px;
+    font-size: 18px;
 }
 
-.notice-action-box strong {
+.notice-steps {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notice-steps li {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.notice-step-number {
+    padding-top: 2px;
+    color: #8da6c8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.notice-steps strong {
     display: block;
-    margin-bottom: 7px;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 15px;
 }
 
-.notice-action-link {
+.notice-entry {
+    margin-top: 28px !important;
+    padding-top: 2px;
+}
+
+.notice-entry strong {
+    color: var(--text);
+}
+
+.notice-entry a {
     display: inline-flex;
-    align-items: center;
-    margin-top: 10px;
-    padding: 10px 15px;
-    border-radius: 9px;
-    background: var(--primary);
-    color: #ffffff;
+    margin-left: 5px;
+    color: var(--primary);
     font-size: 13px;
     font-weight: 800;
+    white-space: nowrap;
+}
+
+.notice-entry a:hover {
+    text-decoration: underline;
+}
+
+body.dark .notice-label {
+    background: #26364a;
+    color: #a9c4e3;
+}
+
+body.dark .notice-lead {
+    background: #202b3f;
+}
+
+body.dark .notice-article p {
+    color: #bdc7d6;
 }
 
 @media (max-width: 600px) {
     .notice-page {
-        padding: 16px 10px;
+        padding: 12px 10px 36px;
     }
 
     .notice-article {
-        padding: 24px 20px;
+        padding: 25px 20px 34px;
         border-radius: 14px;
+    }
+
+    .notice-back {
+        margin-bottom: 27px;
+    }
+
+    .notice-header {
+        padding-bottom: 22px;
+    }
+
+    .notice-lead {
+        margin: 24px 0 28px;
+        padding: 15px 16px;
     }
 
     .notice-article p {
         font-size: 14px;
+    }
+
+    .notice-steps li {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 10px;
+        padding: 17px 0;
+    }
+
+    .notice-entry a {
+        display: table;
+        margin: 8px 0 0;
     }
 }
 
