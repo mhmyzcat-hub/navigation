@@ -1,129 +1,280 @@
+// js/search.js
+// V3.0.1 搜索优化版
+
 
 function initSearch() {
 
     const input = $("#searchInput");
 
+    const button = document.querySelector(
+        ".hero-search button"
+    );
+
+
     if (!input) return;
 
-    input.addEventListener("input", () => {
 
-        const keyword = input.value
+    function executeSearch(){
+
+        const keyword =
+            input.value
             .trim()
             .toLowerCase();
 
-        $$(".card").forEach(card => {
+
+        const cards =
+            $$(".card");
+
+
+        cards.forEach(card=>{
+
+
+            const content =
+                card.dataset.search
+                || "";
+
 
             const matched =
-                card.dataset.search.includes(keyword);
+                content.includes(keyword);
+
 
             card.classList.toggle(
                 "hidden",
                 !matched
             );
 
+
         });
 
-    });
+
+        // 自动跳转到导航区域
+
+        const links =
+            document.querySelector("#links");
+
+
+        if(keyword && links){
+
+            setTimeout(()=>{
+
+                links.scrollIntoView({
+
+                    behavior:"smooth",
+
+                    block:"start"
+
+                });
+
+            },150);
+
+        }
+
+    }
+
+
+    // 输入实时搜索
+
+    input.addEventListener(
+        "input",
+        executeSearch
+    );
+
+
+    // 点击搜索按钮
+
+    if(button){
+
+        button.addEventListener(
+            "click",
+            executeSearch
+        );
+
+    }
+
+
+    // 回车搜索
+
+    input.addEventListener(
+        "keydown",
+        event=>{
+
+
+            if(event.key==="Enter"){
+
+                executeSearch();
+
+            }
+
+
+        }
+    );
+
 
 }
+
 
 /* ===========================
    Collapse
 =========================== */
 
-function initCollapse() {
 
-    $$(".collapse-btn").forEach(button => {
+function initCollapse(){
 
-        button.addEventListener("click", () => {
 
-            toggleCollapse(
+    $$(".collapse-btn")
+    .forEach(button=>{
 
-                button.dataset.target,
 
-                button
+        button.addEventListener(
+            "click",
+            ()=>{
 
-            );
 
-        });
+                toggleCollapse(
+
+                    button.dataset.target,
+
+                    button
+
+                );
+
+
+            }
+        );
+
 
     });
 
+
 }
+
 
 /* ===========================
    FAQ
 =========================== */
 
-function initFAQ() {
 
-    document.addEventListener("click", e => {
+function initFAQ(){
 
-        const question =
-            e.target.closest(".faq-question");
 
-        if (!question) return;
+    document.addEventListener(
+        "click",
+        event=>{
 
-        const item =
-            question.parentElement;
 
-        item.classList.toggle("active");
+            const question =
+                event.target.closest(
+                    ".faq-question"
+                );
 
-    });
+
+            if(!question) return;
+
+
+            const item =
+                question.parentElement;
+
+
+            item.classList.toggle(
+                "active"
+            );
+
+
+        }
+    );
+
 
 }
+
 
 /* ===========================
-   Copy Button
+   Copy
 =========================== */
 
-function initCopyButtons() {
 
-    $$(".copy-btn").forEach(button => {
+function initCopyButtons(){
 
-        button.addEventListener("click", () => {
 
-            copyText(button.dataset.copy);
+    $$(".copy-btn")
+    .forEach(button=>{
 
-        });
+
+        button.addEventListener(
+            "click",
+            ()=>{
+
+
+                copyText(
+                    button.dataset.copy
+                );
+
+
+            }
+        );
+
 
     });
 
+
 }
+
 
 /* ===========================
    Smooth Scroll
 =========================== */
 
-function initAnchor() {
 
-    document.addEventListener("click", e => {
+function initAnchor(){
 
-        const link =
-            e.target.closest('a[href^="#"]');
 
-        if (!link) return;
+    document.addEventListener(
+        "click",
+        event=>{
 
-        const href =
-            link.getAttribute("href");
 
-        if (href === "#") return;
+            const link =
+                event.target.closest(
+                    'a[href^="#"]'
+                );
 
-        const target =
-            document.querySelector(href);
 
-        if (!target) return;
+            if(!link) return;
 
-        e.preventDefault();
 
-        target.scrollIntoView({
+            const href =
+                link.getAttribute(
+                    "href"
+                );
 
-            behavior: "smooth",
 
-            block: "start"
+            if(
+                href === "#"
+            ) return;
 
-        });
 
-    });
+            const target =
+                document.querySelector(
+                    href
+                );
+
+
+            if(!target) return;
+
+
+            event.preventDefault();
+
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+
+        }
+    );
+
 
 }
