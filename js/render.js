@@ -80,6 +80,22 @@ function renderAnnouncements() {
         row.appendChild(content);
         row.appendChild(date);
 
+        if (item.action) {
+            row.classList.add("is-clickable");
+            row.tabIndex = 0;
+
+            row.addEventListener("click", function () {
+                executeAction(item.action);
+            });
+
+            row.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    executeAction(item.action);
+                }
+            });
+        }
+
         container.appendChild(row);
     });
 }
@@ -92,31 +108,90 @@ function renderFeaturedPath() {
         return;
     }
 
-    container.innerHTML = `
-        <div class="featured-path-icon">
-            🔗
-        </div>
+    container.innerHTML = "";
 
-        <div class="featured-path-content">
-            <h2>${featuredPath.title}</h2>
-            <p>${featuredPath.description}</p>
-        </div>
+    const heading = document.createElement("div");
+    heading.className = "featured-path-heading";
 
-        <button
-            class="featured-path-button"
-            type="button"
-        >
-            复制路径
-        </button>
-    `;
+    const headingText = document.createElement("div");
+    const title = document.createElement("h2");
+    const description = document.createElement("p");
+    const count = document.createElement("span");
 
-    const button = container.querySelector(
-        ".featured-path-button"
-    );
+    title.textContent = featuredPath.title;
+    description.textContent = featuredPath.description;
+    count.className = "featured-path-count";
+    count.textContent = (featuredPath.items || []).length + " 条路径";
+    headingText.appendChild(title);
+    headingText.appendChild(description);
+    heading.appendChild(headingText);
+    heading.appendChild(count);
 
-    button.addEventListener("click", function () {
-        copyText(featuredPath.value);
+    const list = document.createElement("div");
+    list.className = "featured-path-list";
+
+    (featuredPath.items || []).forEach(function (item) {
+        const row = document.createElement("div");
+        row.className = "featured-path-row";
+
+        const category = document.createElement("span");
+        category.className = "featured-path-category";
+        category.textContent = item.category;
+
+        const pathWrap = document.createElement("div");
+        pathWrap.className = "featured-path-value";
+
+        if (item.exempt) {
+            const exempt = document.createElement("span");
+            exempt.className = "featured-path-exempt";
+            exempt.textContent = "免审";
+            pathWrap.appendChild(exempt);
+        }
+
+        const breadcrumb = document.createElement("div");
+        breadcrumb.className = "featured-path-breadcrumb";
+
+        item.path.split(" > ").forEach(function (segment, index, segments) {
+            const segmentText = document.createElement("span");
+            segmentText.className = "featured-path-segment";
+            segmentText.textContent = segment;
+            breadcrumb.appendChild(segmentText);
+
+            if (index < segments.length - 1) {
+                const separator = document.createElement("span");
+                separator.className = "featured-path-separator";
+                separator.textContent = "›";
+                breadcrumb.appendChild(separator);
+            }
+        });
+
+        pathWrap.appendChild(breadcrumb);
+
+        const button = document.createElement("button");
+        button.className = "featured-path-copy";
+        button.type = "button";
+        button.textContent = "复制";
+        button.setAttribute("aria-label", "复制" + item.category + "路径");
+
+        button.addEventListener("click", function () {
+            copyText(item.path);
+            button.textContent = "已复制";
+            button.classList.add("is-copied");
+
+            window.setTimeout(function () {
+                button.textContent = "复制";
+                button.classList.remove("is-copied");
+            }, 1400);
+        });
+
+        row.appendChild(category);
+        row.appendChild(pathWrap);
+        row.appendChild(button);
+        list.appendChild(row);
     });
+
+    container.appendChild(heading);
+    container.appendChild(list);
 }
 
 function renderDirectories() {
@@ -172,27 +247,40 @@ function createContactSection(category) {
     grid.className = "contact-grid";
 
     category.items.forEach(function (item) {
+        if (item.layout === "wide") {
+            grid.appendChild(createContactWideRow(item));
+            return;
+        }
+
         const card = document.createElement("article");
 
         card.className = "contact-card";
         card.tabIndex = 0;
 
         card.innerHTML = `
-            <div class="contact-card-icon">
-                ${item.icon}
-            </div>
+    <div class="contact-card-icon">
+        ${item.icon}
+    </div>
 
-            <div class="contact-card-body">
-                <h3>${item.title}</h3>
+    <div class="contact-card-body">
 
-                <button
-                    class="contact-action-button"
-                    type="button"
-                >
-                    ${item.buttonText}
-                </button>
-            </div>
-        `;
+        <h3>
+            ${item.title}
+        </h3>
+
+        <p class="contact-card-subtitle">
+            ${item.subtitle || ""}
+        </p>
+
+        <button
+            class="contact-action-button"
+            type="button"
+        >
+            ${item.buttonText}
+        </button>
+
+    </div>
+`;
 
         card.addEventListener("click", function (event) {
             if (
@@ -221,6 +309,107 @@ function createContactSection(category) {
     section.appendChild(grid);
 
     return section;
+}
+
+function createContactWideRow(item) {
+    const row = document.createElement("article");
+    row.className = "contact-wide-row contact-wide-" + item.kind;
+
+    if (item.kind === "onboarding") {
+        const content = document.createElement("div");
+        content.className = "contact-wide-content onboarding-content";
+
+        const title = document.createElement("h3");
+        title.textContent = item.title;
+
+        const details = document.createElement("div");
+        details.className = "onboarding-details";
+
+        const linkGroup = document.createElement("div");
+        linkGroup.className = "contact-detail-group";
+
+        const linkLabel = document.createElement("span");
+        linkLabel.className = "contact-detail-label";
+        linkLabel.textContent = item.linkLabel + "：";
+
+        const link = document.createElement("a");
+        link.className = "contact-onboarding-link";
+        link.href = item.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = item.link;
+
+        linkGroup.appendChild(linkLabel);
+        linkGroup.appendChild(link);
+
+        const codeGroup = document.createElement("div");
+        codeGroup.className = "contact-detail-group";
+
+        const codeLabel = document.createElement("span");
+        codeLabel.className = "contact-detail-label";
+        codeLabel.textContent = item.codeLabel + "：";
+
+        const code = document.createElement("strong");
+        code.className = "contact-invite-code";
+        code.textContent = item.code;
+
+        codeGroup.appendChild(codeLabel);
+        codeGroup.appendChild(code);
+        details.appendChild(linkGroup);
+        details.appendChild(codeGroup);
+        content.appendChild(title);
+        content.appendChild(details);
+
+        const actions = document.createElement("div");
+        actions.className = "contact-wide-actions";
+
+        const openButton = document.createElement("button");
+        openButton.className = "contact-wide-button primary";
+        openButton.type = "button";
+        openButton.textContent = "打开链接";
+        openButton.addEventListener("click", function () {
+            window.open(item.link, "_blank", "noopener,noreferrer");
+        });
+
+        const copyButton = document.createElement("button");
+        copyButton.className = "contact-wide-button";
+        copyButton.type = "button";
+        copyButton.textContent = "复制邀请码";
+        copyButton.addEventListener("click", function () {
+            copyText(item.code);
+        });
+
+        actions.appendChild(openButton);
+        actions.appendChild(copyButton);
+        row.appendChild(content);
+        row.appendChild(actions);
+        return row;
+    }
+
+    const content = document.createElement("div");
+    content.className = "contact-wide-content address-content";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+    content.appendChild(title);
+
+    (item.lines || []).forEach(function (line) {
+        const text = document.createElement("p");
+        text.textContent = line;
+        content.appendChild(text);
+    });
+
+    const copyButton = document.createElement("button");
+    copyButton.className = "contact-wide-button primary";
+    copyButton.type = "button";
+    copyButton.textContent = "复制完整地址";
+    copyButton.addEventListener("click", function () {
+        copyText(item.copyValue);
+    });
+
+    row.appendChild(content);
+    row.appendChild(copyButton);
+    return row;
 }
 
 function createListSection(category) {
