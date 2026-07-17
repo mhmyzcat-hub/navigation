@@ -1,731 +1,163 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="叉烧虫导航站"
+    >
 
-<title>叉烧虫导航站 V3</title>
+    <title>叉烧虫导航站</title>
 
-<meta
-name="description"
-content="现代化团队导航平台">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
-<meta
-name="theme-color"
-content="#3B82F6">
-
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link
-rel="stylesheet"
-href="css/style.css">
-
-<link
-rel="stylesheet"
-href="css/components.css">
-
-<link
-rel="stylesheet"
-href="css/responsive.css">
-
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
 </head>
 
 <body>
 
-<header class="header">
+    <header class="site-header">
 
-<div class="container">
+        <div class="header-inner">
 
-<div class="navbar">
+            <a
+                class="site-logo"
+                href="#top"
+            >
+                叉烧虫导航站
+            </a>
 
-<a
-href="#"
-class="logo">
+            <nav class="top-navigation">
 
-<div class="logo-mark">
+                <a href="#announcement">
+                    公告
+                </a>
 
-C
+                <a href="#section-contact">
+                    对接
+                </a>
 
-</div>
+                <a href="#section-hot">
+                    推荐
+                </a>
 
-<div class="logo-text">
+                <a href="#section-link">
+                    链接
+                </a>
 
-<h2>
+                <a href="#section-faq">
+                    答疑
+                </a>
 
-叉烧虫导航站
+            </nav>
 
-</h2>
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="切换深色模式"
+            >
+                🌙
+            </button>
 
-<span>
+        </div>
 
-Navigation V3
+    </header>
 
-</span>
+    <main
+        id="top"
+        class="page-container"
+    >
 
-</div>
+        <!-- 男装正装横幅 -->
+        <section
+            class="hero-banner"
+            aria-label="男装正装展示"
+        ></section>
 
-</a>
+        <!-- 公告 -->
+        <section
+            id="announcement"
+            class="announcement-section"
+        >
 
-<nav class="menu">
+            <div class="section-heading">
 
-<a href="#links">
+                <span class="section-heading-mark">
+                    📢
+                </span>
 
-导航
+                <h1>
+                    最新公告
+                </h1>
 
-</a>
+            </div>
 
-<a href="#recommend">
+            <div
+                id="announcementList"
+                class="announcement-list"
+            ></div>
 
-推荐
+        </section>
 
-</a>
+        <!-- 上款路径 -->
+        <section
+            id="featuredPath"
+            class="featured-path"
+        ></section>
 
-<a href="#faq">
+        <!-- 分类内容 -->
+        <div id="directoryContainer"></div>
 
-FAQ
+    </main>
 
-</a>
+    <footer class="site-footer">
 
-<a href="#rules">
+        <div class="footer-inner">
 
-规则
-
-</a>
-
-</nav>
-
-<div class="header-actions">
-
-<button
-id="themeToggle"
-class="theme-btn">
-
-🌙
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<main>
-
-<section class="hero">
-
-<div class="container">
-
-<div class="hero-grid">
-
-<div class="hero-left">
-
-<div class="hero-badge">
-
-Modern Navigation Platform
-
-</div>
-
-<h1>
-
-更现代的团队导航平台
-
-</h1>
-
-<p>
-
-统一管理所有平台、工具、公告、文档、
-联系方式与常用资源，
-帮助团队快速协作。
-
-</p>
-
-<div class="hero-search">
-
-<input
-
-id="searchInput"
-
-type="text"
-
-placeholder="搜索平台、工具、网站..."
-
->
-
-<button>
-
-搜索
-
-</button>
-
-</div>
-
-<div class="hero-buttons">
-
-<a
-href="#links"
-class="btn-primary">
-
-开始使用
-
-</a>
-
-<a
-href="#recommend"
-class="btn-secondary">
-
-查看推荐
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="hero-card">
-
-<div class="stat">
-
-<h3 id="siteCount">
-
-0
-
-</h3>
-
-<p>
-
-导航数量
-
-</p>
-
-</div>
-
-<div class="stat">
-
-<h3 id="recommendCount">
-
-0
-
-</h3>
-
-<p>
-
-推荐资源
-
-</p>
-
-</div>
-
-<div class="stat">
-
-<h3>
-
-24H
-
-</h3>
-
-<p>
-
-在线服务
-
-</p>
-
-</div>
-
-<div class="stat">
-
-<h3>
-
-V3
-
-</h3>
-
-<p>
-
-当前版本
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="announcement">
-
-<div class="container">
-
-<div class="announcement-box">
-
-<div class="announcement-icon">
-
-📢
-
-</div>
-
-<div>
-
-<h3>
-
-最新公告
-
-</h3>
-
-<p id="noticeText">
-
-加载中...
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="links" class="section">
-
-<div class="container">
-
-<div class="section-header">
-
-<div>
-
-<span class="section-tag">
-
-Navigation
-
-</span>
-
-<h2>
-
-常用入口
-
-</h2>
-
-<p>
-
-所有导航均由 data/navigation.js 自动生成
-
-</p>
-
-</div>
-
-<button
-class="collapse-btn"
-data-target="commonLinks">
-
-收起
-
-</button>
-
-</div>
-
-<div
-id="commonLinks"
-class="card-grid">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="recommend" class="section">
-
-<div class="container">
-
-<div class="section-header">
-
-<div>
-
-<span class="section-tag">
-
-Recommend
-
-</span>
-
-<h2>
-
-开款推荐
-
-</h2>
-
-<p>
-
-团队推荐平台与优质资源
-
-</p>
-
-</div>
-
-<button
-class="collapse-btn"
-data-target="recommendList">
-
-收起
-
-</button>
-
-</div>
-
-<div
-id="recommendList"
-class="card-grid">
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<div class="contact-wrapper">
-
-<div class="contact-left">
-
-<span class="section-tag">
-
-Contact
-
-</span>
-
-<h2>
-
-联系方式
-
-</h2>
-
-<p>
-
-点击即可复制联系方式
-
-</p>
-
-</div>
-
-<div class="contact-list">
-
-<div class="contact-card">
-
-<div>
-
-<h4>
-
-微信
-
-</h4>
-
-<p id="wechatText">
-
-WeChat001
-
-</p>
-
-</div>
-
-<button
-class="copy-btn"
-data-copy="WeChat001">
-
-复制
-
-</button>
-
-</div>
-
-<div class="contact-card">
-
-<div>
-
-<h4>
-
-Telegram
-
-</h4>
-
-<p id="telegramText">
-
-@NavigationTeam
-
-</p>
-
-</div>
-
-<button
-class="copy-btn"
-data-copy="@NavigationTeam">
-
-复制
-
-</button>
-
-</div>
-
-<div class="contact-card">
-
-<div>
-
-<h4>
-
-邮箱
-
-</h4>
-
-<p>
-
-team@example.com
-
-</p>
-
-</div>
-
-<button
-class="copy-btn"
-data-copy="team@example.com">
-
-复制
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="faq" class="section">
-
-<div class="container">
-
-<div class="section-header">
-
-<div>
-
-<span class="section-tag">
-
-FAQ
-
-</span>
-
-<h2>
-
-常见问题
-
-</h2>
-
-<p>
-
-帮助团队成员快速解决常见问题
-
-</p>
-
-</div>
-
-</div>
-
-<div id="faqList" class="faq-list">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="rules" class="section">
-
-<div class="container">
-
-<div class="section-header">
-
-<div>
-
-<span class="section-tag">
-
-Rules
-
-</span>
-
-<h2>
-
-平台规则
-
-</h2>
-
-<p>
-
-使用平台前请阅读以下规范
-
-</p>
-
-</div>
-
-</div>
-
-<div
-id="rulesContent"
-class="rules-box">
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<footer class="footer">
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<h3>
-
-叉烧虫导航站 V3
-
-</h3>
-
-<p>
-
-Modern Team Navigation Platform
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-
-快速导航
-
-</h4>
-
-<a href="#links">
-
-常用入口
-
-</a>
-
-<a href="#recommend">
-
-开款推荐
-
-</a>
-
-<a href="#faq">
-
-FAQ
-
-</a>
-
-<a href="#rules">
-
-平台规则
-
-</a>
-
-</div>
-
-<div>
-
-<h4>
-
-联系方式
-
-</h4>
-
-<p>
-
-WeChat001
-
-</p>
-
-<p>
-
-@NavigationTeam
-
-</p>
-
-<p>
-
-team@example.com
-
-</p>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-<span>
-
-© 2026 叉烧虫导航站 V3
-
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
-<div
-id="toast"
-class="toast">
-
-已复制
-
-</div>
-
-<script src="data/navigation.js"></script>
-
-<script src="js/utils.js"></script>
-
-<script src="js/render.js"></script>
-
-<script src="js/search.js"></script>
-
-<script src="js/app.js"></script>
+            <p id="footerCopyright">
+                © 2026 叉烧虫导航站
+            </p>
+
+            <p id="lastUpdateText">
+                最后更新：--
+            </p>
+
+        </div>
+
+    </footer>
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="返回顶部"
+    >
+        ↑
+    </button>
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+    <script src="data/navigation.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
+
 </html>

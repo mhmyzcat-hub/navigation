@@ -1,345 +1,139 @@
-
-/* =========================
-   Desktop
-========================= */
-
-@media (max-width:1200px){
-
-    .hero-grid{
-
-        grid-template-columns:1fr;
-
-        gap:48px;
-
+@media (max-width: 900px) {
+    .header-inner {
+        grid-template-columns: 1fr auto;
     }
 
-    .hero-right{
-
-        max-width:720px;
-
+    .top-navigation {
+        display: none;
     }
 
-    .contact-wrapper{
-
-        grid-template-columns:1fr;
-
+    .contact-grid,
+    .list-section-grid {
+        grid-template-columns: 1fr;
     }
 
+    .hero-banner {
+        height: 210px;
+    }
 }
 
-/* =========================
-   Tablet
-========================= */
-
-@media (max-width:992px){
-
-    .navbar{
-
-        height:auto;
-
-        padding:18px 0;
-
-        flex-wrap:wrap;
-
-        gap:20px;
-
+@media (max-width: 600px) {
+    .header-inner,
+    .page-container,
+    .footer-inner {
+        width: calc(100% - 24px);
     }
 
-    .menu{
-
-        width:100%;
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-        gap:18px;
-
+    .header-inner {
+        height: 66px;
     }
 
-    .hero{
-
-        padding:70px 0;
-
+    .site-logo {
+        font-size: 20px;
     }
 
-    .hero h1{
-
-        font-size:46px;
-
-        line-height:1.15;
-
+    .theme-toggle {
+        width: 39px;
+        height: 39px;
     }
 
-    .hero-search{
-
-        flex-direction:column;
-
+    .page-container {
+        margin-top: 12px;
     }
 
-    .hero-search button{
-
-        width:100%;
-
-        height:56px;
-
+    .hero-banner {
+        height: 160px;
+        border-radius: 13px;
     }
 
-    .hero-card{
-
-        grid-template-columns:repeat(2,1fr);
-
+    .section-heading {
+        padding: 17px;
     }
 
-    .section-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:18px;
-
+    .section-heading h1 {
+        font-size: 19px;
     }
 
-    .footer-grid{
+    .announcement-item {
+        min-height: 68px;
+        padding: 16px;
 
-        grid-template-columns:1fr 1fr;
-
+        align-items: flex-start;
     }
 
-}
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width:768px){
-
-    .container{
-
-        width:94%;
-
+    .announcement-title-row {
+        flex-wrap: wrap;
+        font-size: 13px;
     }
 
-    .logo{
-
-        width:100%;
-
+    .announcement-date {
+        font-size: 11px;
     }
 
-    .menu{
-
-        justify-content:flex-start;
-
+    .featured-path {
+        padding: 17px;
+        gap: 13px;
     }
 
-    .hero{
+    .featured-path-icon {
+        width: 50px;
+        height: 50px;
 
-        padding:56px 0;
-
+        font-size: 23px;
     }
 
-    .hero h1{
-
-        font-size:34px;
-
+    .featured-path-content h2 {
+        font-size: 17px;
     }
 
-    .hero p{
-
-        font-size:16px;
-
+    .featured-path-content p {
+        display: none;
     }
 
-    .hero-buttons{
+    .featured-path-button {
+        min-width: 88px;
+        padding: 11px 14px;
 
-        flex-direction:column;
-
+        font-size: 13px;
     }
 
-    .btn-primary,
-
-    .btn-secondary{
-
-        width:100%;
-
-        justify-content:center;
-
+    .category-heading h2 {
+        font-size: 18px;
     }
 
-    .hero-card{
-
-        grid-template-columns:1fr;
-
+    .contact-card {
+        min-height: 112px;
+        padding: 17px;
     }
 
-    .card-grid{
+    .contact-card-icon {
+        width: 58px;
+        height: 58px;
 
-        grid-template-columns:1fr;
-
+        font-size: 29px;
     }
 
-    .contact-card{
+    .contact-card-body h3 {
+        margin-bottom: 11px;
 
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:18px;
-
+        font-size: 16px;
     }
 
-    .copy-btn{
+    .list-section-title {
+        padding: 16px 18px;
 
-        width:100%;
-
+        font-size: 17px;
     }
 
-    .card-footer{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:14px;
-
+    .navigation-list {
+        padding: 2px 17px 8px;
     }
 
-    .card-link{
+    .footer-inner {
+        min-height: 82px;
 
-        width:100%;
-
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
     }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        gap:28px;
-
-    }
-
-}
-
-/* =========================
-   Small Mobile
-========================= */
-
-@media (max-width:480px){
-
-    .logo-mark{
-
-        width:42px;
-
-        height:42px;
-
-        font-size:18px;
-
-    }
-
-    .logo-text h2{
-
-        font-size:18px;
-
-    }
-
-    .hero h1{
-
-        font-size:28px;
-
-    }
-
-    .section-header h2{
-
-        font-size:26px;
-
-    }
-
-    .hero-search input{
-
-        height:54px;
-
-        font-size:15px;
-
-    }
-
-    .announcement-box{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-    }
-
-    .announcement-icon{
-
-        width:54px;
-
-        height:54px;
-
-    }
-
-    .card{
-
-        padding:20px;
-
-    }
-
-    .card-icon{
-
-        width:52px;
-
-        height:52px;
-
-        font-size:24px;
-
-    }
-
-    .faq-question{
-
-        padding:18px;
-
-        font-size:15px;
-
-    }
-
-    .faq-answer{
-
-        padding:0 18px 18px;
-
-    }
-
-    .rules-box{
-
-        padding:22px;
-
-    }
-
-}
-
-/* =========================
-   Large Screen
-========================= */
-
-@media (min-width:1600px){
-
-    :root{
-
-        --max-width:1440px;
-
-    }
-
-    .hero h1{
-
-        font-size:68px;
-
-    }
-
-    .card-grid{
-
-        grid-template-columns:
-        repeat(auto-fill,minmax(340px,1fr));
-
-    }
-
 }
