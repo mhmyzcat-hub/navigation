@@ -130,42 +130,42 @@ const navigationData = [
 },
     {
         id: "section-hot",
-        title: "爆款推荐",
+        title: "开款推荐",
         layout: "list",
         items: [
             {
-                title: "爆款榜单",
+                title: "西装开款",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: "recommend-suit.html"
                 }
             },
             {
-                title: "热门活动",
+                title: "西裤开款",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: "recommend-trousers.html"
                 }
             },
             {
-                title: "新品速递",
+                title: "西装套装开款",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: "recommend-suit-set.html"
                 }
             },
             {
-                title: "限时福利",
+                title: "正装衬衫开款",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: "recommend-shirt.html"
                 }
             },
             {
-                title: "独家资源",
+                title: "马甲燕尾服开款",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: "recommend-vest-tailcoat.html"
                 }
             }
         ]
