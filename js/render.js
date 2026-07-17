@@ -110,22 +110,7 @@ function renderFeaturedPath() {
 
     container.innerHTML = "";
 
-    const heading = document.createElement("div");
-    heading.className = "featured-path-heading";
-
-    const headingText = document.createElement("div");
-    const title = document.createElement("h2");
-    const description = document.createElement("p");
-    const count = document.createElement("span");
-
-    title.textContent = featuredPath.title;
-    description.textContent = featuredPath.description;
-    count.className = "featured-path-count";
-    count.textContent = (featuredPath.items || []).length + " 条路径";
-    headingText.appendChild(title);
-    headingText.appendChild(description);
-    heading.appendChild(headingText);
-    heading.appendChild(count);
+    const heading = createSectionTitle(featuredPath.title);
 
     const list = document.createElement("div");
     list.className = "featured-path-list";
