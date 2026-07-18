@@ -178,85 +178,22 @@ const navigationData = [
         ]
     },
     {
-        id: "section-link",
-        title: "链接优化",
+        id: "section-product",
+        title: "商品优化",
         layout: "list",
         items: [
             {
-                title: "在线工具箱",
+                title: "图片优化",
                 action: {
                     type: "link",
-                    value: "https://example.com"
+                    value: ""
                 }
             },
             {
-                title: "链接检测",
+                title: "标题扩写",
                 action: {
                     type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "域名查询",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "短链生成",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "链接转换",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            }
-        ]
-    },
-    {
-        id: "section-faq",
-        title: "问题答疑",
-        layout: "list",
-        items: [
-            {
-                title: "常见问题",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "使用教程",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "故障排查",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "问题反馈",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
-                }
-            },
-            {
-                title: "建议收集",
-                action: {
-                    type: "link",
-                    value: "https://example.com"
+                    value: ""
                 }
             }
         ]
