@@ -7,23 +7,27 @@ const recommendationRepository = {
 
 const recommendationGalleries = {
     suit: {
-        title: "西装开款",
+        title: "单西",
         folder: "assets/recommendations/suit"
     },
     trousers: {
-        title: "西裤开款",
+        title: "西裤",
         folder: "assets/recommendations/trousers"
     },
     suitSet: {
-        title: "西装套装开款",
+        title: "两件套",
         folder: "assets/recommendations/suit-set"
     },
+    threePiece: {
+        title: "三件套",
+        folder: "assets/recommendations/three-piece"
+    },
     shirt: {
-        title: "正装衬衫开款",
+        title: "衬衫",
         folder: "assets/recommendations/shirt"
     },
     vestTailcoat: {
-        title: "马甲燕尾服开款",
+        title: "单马甲",
         folder: "assets/recommendations/vest-tailcoat"
     }
 };

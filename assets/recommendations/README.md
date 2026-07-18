@@ -2,11 +2,12 @@
 
 图片请分别放入以下文件夹：
 
-- `suit/`：西装开款
-- `trousers/`：西裤开款
-- `suit-set/`：西装套装开款
-- `shirt/`：正装衬衫开款
-- `vest-tailcoat/`：马甲燕尾服开款
+- `suit/`：单西
+- `vest-tailcoat/`：单马甲
+- `suit-set/`：两件套
+- `three-piece/`：三件套
+- `trousers/`：西裤
+- `shirt/`：衬衫
 
 图片放入文件夹并推送到 GitHub 后，网页会自动读取，无需登记文件名或修改代码。
 

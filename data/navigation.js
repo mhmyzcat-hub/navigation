@@ -134,38 +134,45 @@ const navigationData = [
         layout: "list",
         items: [
             {
-                title: "西装开款",
+                title: "单西",
                 action: {
                     type: "link",
                     value: "recommend-suit.html"
                 }
             },
             {
-                title: "西裤开款",
+                title: "单马甲",
                 action: {
                     type: "link",
-                    value: "recommend-trousers.html"
+                    value: "recommend-vest-tailcoat.html"
                 }
             },
             {
-                title: "西装套装开款",
+                title: "两件套",
                 action: {
                     type: "link",
                     value: "recommend-suit-set.html"
                 }
             },
             {
-                title: "正装衬衫开款",
+                title: "三件套",
                 action: {
                     type: "link",
-                    value: "recommend-shirt.html"
+                    value: "recommend-three-piece.html"
                 }
             },
             {
-                title: "马甲燕尾服开款",
+                title: "西裤",
                 action: {
                     type: "link",
-                    value: "recommend-vest-tailcoat.html"
+                    value: "recommend-trousers.html"
+                }
+            },
+            {
+                title: "衬衫",
+                action: {
+                    type: "link",
+                    value: "recommend-shirt.html"
                 }
             }
         ]
