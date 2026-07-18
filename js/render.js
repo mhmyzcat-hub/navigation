@@ -114,6 +114,31 @@ function renderFeaturedPath() {
 
     const list = document.createElement("div");
     list.className = "featured-path-list";
+    list.id = "featuredPathList";
+
+    const toggleButton = document.createElement("button");
+    toggleButton.className = "featured-path-toggle";
+    toggleButton.type = "button";
+    toggleButton.setAttribute("aria-controls", list.id);
+    toggleButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-label", "收起上款路径");
+    toggleButton.title = "收起上款路径";
+    toggleButton.innerHTML = '<span class="featured-path-toggle-icon" aria-hidden="true"></span>';
+
+    heading.classList.add("featured-path-title-row");
+    heading.appendChild(toggleButton);
+
+    toggleButton.addEventListener("click", function () {
+        const willCollapse = !list.hidden;
+        list.hidden = willCollapse;
+        toggleButton.classList.toggle("is-collapsed", willCollapse);
+        toggleButton.setAttribute("aria-expanded", String(!willCollapse));
+        toggleButton.setAttribute(
+            "aria-label",
+            willCollapse ? "展开上款路径" : "收起上款路径"
+        );
+        toggleButton.title = willCollapse ? "展开上款路径" : "收起上款路径";
+    });
 
     (featuredPath.items || []).forEach(function (item) {
         const row = document.createElement("div");

@@ -423,6 +423,54 @@ body.dark .notice-article p {
     margin-top: 28px;
 }
 
+.featured-path-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.featured-path-toggle {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--surface);
+    color: var(--muted);
+    transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.featured-path-toggle:hover {
+    border-color: #bfd0e7;
+    background: #f4f8fd;
+    color: var(--primary);
+}
+
+.featured-path-toggle-icon {
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid currentColor;
+    border-left: 2px solid currentColor;
+    transform: translateY(2px) rotate(45deg);
+    transition: transform 0.22s ease;
+}
+
+.featured-path-toggle.is-collapsed .featured-path-toggle-icon {
+    transform: translateY(-2px) rotate(225deg);
+}
+
+.featured-path-list[hidden] {
+    display: none;
+}
+
+body.dark .featured-path-toggle:hover {
+    background: #26364a;
+}
+
 .featured-path-list {
     display: grid;
     gap: 8px;
