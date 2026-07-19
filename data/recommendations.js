@@ -39,6 +39,19 @@ const recommendationGalleries = {
     },
     vestTailcoat: {
         title: "单马甲",
-        folder: "assets/recommendations/vest-tailcoat"
+        sections: [
+            {
+                title: "领型",
+                folder: "assets/recommendations/vest-tailcoat/collar"
+            },
+            {
+                title: "扣型",
+                folder: "assets/recommendations/vest-tailcoat/button"
+            },
+            {
+                title: "面料",
+                folder: "assets/recommendations/vest-tailcoat/fabric"
+            }
+        ]
     }
 };

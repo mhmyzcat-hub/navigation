@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
-    document.title = gallery.title + " - 叹木宁导航站";
+    document.title = gallery.title + " - 叉烧虫导航站";
 
     const title = document.getElementById("galleryTitle");
     const count = document.getElementById("galleryCount");
@@ -37,13 +37,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }, 0);
 
             count.textContent = totalCount + " 张图片";
-
-            if (!totalCount) {
-                empty.hidden = false;
-                grid.hidden = true;
-                return;
-            }
-
             grid.className = "gallery-section-list";
             sectionResults.forEach(function (section) {
                 renderGallerySection(grid, gallery, section);
