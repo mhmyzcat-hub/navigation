@@ -61,10 +61,14 @@ const announcements = [
         }
     },
     {
-        title: "导航内容持续更新中",
-        date: "2026-07-17",
+        title: "美国 GCC 豁免操作",
+        date: "2026-07-19",
         pinned: false,
-        isNew: false
+        isNew: true,
+        action: {
+            type: "link",
+            value: "notice-gcc-exemption.html"
+        }
     }
 ];
 
