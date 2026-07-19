@@ -1,6 +1,6 @@
 const siteConfig = {
-    title: "叉烧虫导航站",
-    copyright: "© 2026 叉烧虫导航站",
+    title: "叹木宁导航站",
+    copyright: "© 2026 叹木宁导航站",
     footerNotice: "本网站分享的内容仅供参考，不构成任何法律意见或建议"
 };
 

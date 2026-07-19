@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
-    document.title = gallery.title + " - 叉烧虫导航站";
+    document.title = gallery.title + " - 叹木宁导航站";
 
     const title = document.getElementById("galleryTitle");
     const count = document.getElementById("galleryCount");
