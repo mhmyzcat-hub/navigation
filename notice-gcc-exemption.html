@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="美国 GCC 豁免操作说明">
-    <title>美国 GCC 豁免操作 - 叹木宁导航站</title>
+    <title>美国 GCC 豁免操作 - 叉烧虫导航站</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <script>
+        if (localStorage.getItem("navigation-theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+    </script>
     <main class="notice-page">
         <article class="notice-article gcc-notice-article">
-            <a class="notice-back" href="index.html#announcement">← 返回公告</a>
+            <div class="notice-topbar">
+                <a class="notice-back" href="index.html#announcement">← 返回公告</a>
+                <button id="themeToggle" class="notice-theme-toggle" type="button" aria-label="切换深色模式">🌙</button>
+            </div>
 
             <header class="notice-header">
                 <span class="notice-label">合规指引</span>
@@ -77,5 +85,6 @@
             </section>
         </article>
     </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
