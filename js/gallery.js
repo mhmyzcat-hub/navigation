@@ -108,29 +108,18 @@ function renderGallerySection(container, gallery, section) {
 }
 
 async function loadGalleryImages(folder) {
-    const repository = recommendationRepository;
-    const apiUrl =
-        "https://api.github.com/repos/" +
-        repository.owner + "/" +
-        repository.repo +
-        "/contents/" + folder +
-        "?ref=" + encodeURIComponent(repository.branch);
+    const normalizedFolder = "/" + folder.replace(/^\/+|\/+$/g, "") + "/";
 
-    const response = await fetch(apiUrl, {
-        headers: { Accept: "application/vnd.github+json" },
-        cache: "no-store"
-    });
-
-    if (!response.ok) {
-        throw new Error("GitHub image directory request failed");
-    }
-
-    const files = await response.json();
-    const imagePattern = /\.(avif|gif|jpe?g|png|webp)$/i;
-
-    return files
+    return Array.from(document.querySelectorAll("[data-gallery-image]"))
         .filter(function (item) {
-            return item.type === "file" && imagePattern.test(item.name);
+            return item.dataset.path.startsWith(normalizedFolder);
+        })
+        .map(function (item) {
+            return {
+                type: "file",
+                name: item.dataset.name,
+                download_url: item.dataset.url
+            };
         })
         .sort(function (left, right) {
             return left.name.localeCompare(right.name, "zh-CN", {
@@ -146,7 +135,12 @@ function renderGalleryCard(grid, gallery, item, index) {
     card.type = "button";
 
     const displayName = item.name.replace(/\.[^.]+$/, "");
-    const imageTitle = displayName || "参考款式 " + (index + 1);
+    const isScarce = displayName.includes("稀缺");
+    const cleanName = displayName
+        .replace(/[【\[（(]?\s*稀缺\s*[】\]）)]?/g, "")
+        .replace(/^[-_·@\s]+|[-_·@\s]+$/g, "")
+        .trim();
+    const imageTitle = cleanName || "参考款式 " + (index + 1);
     card.setAttribute("aria-label", "查看" + imageTitle);
 
     const image = document.createElement("img");
@@ -157,9 +151,21 @@ function renderGalleryCard(grid, gallery, item, index) {
     const info = document.createElement("span");
     info.className = "gallery-card-info";
 
+    const titleRow = document.createElement("span");
+    titleRow.className = "gallery-card-title-row";
+
     const itemTitle = document.createElement("strong");
     itemTitle.textContent = imageTitle;
-    info.appendChild(itemTitle);
+    titleRow.appendChild(itemTitle);
+
+    if (isScarce) {
+        const scarceBadge = document.createElement("em");
+        scarceBadge.className = "gallery-scarce-badge";
+        scarceBadge.textContent = "·稀缺";
+        titleRow.appendChild(scarceBadge);
+    }
+
+    info.appendChild(titleRow);
 
     card.appendChild(image);
     card.appendChild(info);

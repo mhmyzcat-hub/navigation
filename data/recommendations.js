@@ -1,10 +1,4 @@
-/* 开款图片会自动从 GitHub 文件夹读取，无需登记文件名。 */
-const recommendationRepository = {
-    owner: "mhmyzcat-hub",
-    repo: "navigation",
-    branch: "main"
-};
-
+/* 开款图片由 GitHub Pages 自动生成清单，无需登记文件名。 */
 const recommendationGalleries = {
     suit: {
         title: "单西",
