@@ -6,7 +6,10 @@
 - `vest-tailcoat/`：单马甲
 - `suit-set/`：两件套
 - `three-piece/`：三件套
-- `trousers/`：西裤
+- `trousers/length/`：西裤－裤长
+- `trousers/fit/`：西裤－裤型
+- `trousers/fabric/`：西裤－面料
+- `trousers/pattern/`：西裤－纹样
 - `shirt/`：衬衫
 
 图片放入文件夹并推送到 GitHub 后，网页会自动读取，无需登记文件名或修改代码。

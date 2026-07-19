@@ -19,8 +19,38 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     initGalleryTheme();
     initLightbox();
+    initGalleryCopyButton();
 
     try {
+        if (gallery.sections) {
+            const sectionResults = await Promise.all(
+                gallery.sections.map(async function (section) {
+                    return {
+                        title: section.title,
+                        images: await loadGalleryImages(section.folder)
+                    };
+                })
+            );
+
+            const totalCount = sectionResults.reduce(function (total, section) {
+                return total + section.images.length;
+            }, 0);
+
+            count.textContent = totalCount + " 张图片";
+
+            if (!totalCount) {
+                empty.hidden = false;
+                grid.hidden = true;
+                return;
+            }
+
+            grid.className = "gallery-section-list";
+            sectionResults.forEach(function (section) {
+                renderGallerySection(grid, gallery, section);
+            });
+            return;
+        }
+
         const images = await loadGalleryImages(gallery.folder);
 
         count.textContent = images.length + " 张图片";
@@ -42,6 +72,40 @@ document.addEventListener("DOMContentLoaded", async function () {
         grid.hidden = true;
     }
 });
+
+function renderGallerySection(container, gallery, section) {
+    const sectionElement = document.createElement("section");
+    sectionElement.className = "gallery-category-section";
+
+    const heading = document.createElement("div");
+    heading.className = "gallery-category-heading";
+
+    const title = document.createElement("h2");
+    title.textContent = section.title;
+
+    const count = document.createElement("span");
+    count.textContent = section.images.length + " 张";
+
+    heading.appendChild(title);
+    heading.appendChild(count);
+    sectionElement.appendChild(heading);
+
+    if (!section.images.length) {
+        const empty = document.createElement("p");
+        empty.className = "gallery-section-empty";
+        empty.textContent = "该板块暂未添加图片";
+        sectionElement.appendChild(empty);
+    } else {
+        const grid = document.createElement("div");
+        grid.className = "gallery-grid";
+        section.images.forEach(function (item, index) {
+            renderGalleryCard(grid, gallery, item, index);
+        });
+        sectionElement.appendChild(grid);
+    }
+
+    container.appendChild(sectionElement);
+}
 
 async function loadGalleryImages(folder) {
     const repository = recommendationRepository;
@@ -166,4 +230,39 @@ function updateGalleryThemeButton(button) {
     const isDark = document.body.classList.contains("dark");
     button.textContent = isDark ? "☀️" : "🌙";
     button.setAttribute("aria-label", isDark ? "切换浅色模式" : "切换深色模式");
+}
+
+function initGalleryCopyButton() {
+    const button = document.getElementById("galleryWechatCopy");
+
+    if (!button) {
+        return;
+    }
+
+    const originalText = button.innerHTML;
+
+    button.addEventListener("click", async function () {
+        const text = button.dataset.copy;
+
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (error) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.style.position = "fixed";
+            textarea.style.left = "-9999px";
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            textarea.remove();
+        }
+
+        button.textContent = "已复制 ✓";
+        button.classList.add("is-copied");
+
+        window.setTimeout(function () {
+            button.innerHTML = originalText;
+            button.classList.remove("is-copied");
+        }, 1500);
+    });
 }

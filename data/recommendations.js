@@ -12,7 +12,24 @@ const recommendationGalleries = {
     },
     trousers: {
         title: "西裤",
-        folder: "assets/recommendations/trousers"
+        sections: [
+            {
+                title: "裤长",
+                folder: "assets/recommendations/trousers/length"
+            },
+            {
+                title: "裤型",
+                folder: "assets/recommendations/trousers/fit"
+            },
+            {
+                title: "面料",
+                folder: "assets/recommendations/trousers/fabric"
+            },
+            {
+                title: "纹样",
+                folder: "assets/recommendations/trousers/pattern"
+            }
+        ]
     },
     suitSet: {
         title: "两件套",
