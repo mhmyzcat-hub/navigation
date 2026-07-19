@@ -13,16 +13,15 @@ function renderSiteInfo() {
     const copyright =
         document.getElementById("footerCopyright");
 
-    const update =
-        document.getElementById("lastUpdateText");
+    const footerNotice =
+        document.getElementById("footerNoticeText");
 
     if (copyright) {
         copyright.textContent = siteConfig.copyright;
     }
 
-    if (update) {
-        update.textContent =
-            "最后更新：" + siteConfig.lastUpdate;
+    if (footerNotice) {
+        footerNotice.textContent = siteConfig.footerNotice;
     }
 }
 

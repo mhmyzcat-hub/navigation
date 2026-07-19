@@ -1,7 +1,7 @@
 const siteConfig = {
     title: "叉烧虫导航站",
     copyright: "© 2026 叉烧虫导航站",
-    lastUpdate: "2026-07-17"
+    footerNotice: "本网站分享的内容仅供参考，不构成任何法律意见或建议"
 };
 
 const featuredPath = {
