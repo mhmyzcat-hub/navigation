@@ -130,6 +130,7 @@ function renderGalleryCard(grid, gallery, item, index) {
     const displayName = item.name.replace(/\.[^.]+$/, "");
     const isScarce = displayName.includes("稀缺");
     const cleanName = displayName
+        .replace(/^\d+(?:\s*[-_—–.、]\s*|\s+)/, "")
         .replace(/[【\[（(]?\s*稀缺\s*[】\]）)]?/g, "")
         .replace(/^[-_·@\s]+|[-_·@\s]+$/g, "")
         .trim();
