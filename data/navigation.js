@@ -242,7 +242,7 @@ const recommendationGalleries = {
         sections: [
             { title: "领型", folder: "assets/recommendations/vest-tailcoat/collar" },
             { title: "扣型", folder: "assets/recommendations/vest-tailcoat/button" },
-            { title: "面料", folder: "assets/recommendations/vest-tailcoat/fabric" }
+            { title: "款式", folder: "assets/recommendations/vest-tailcoat/fabric" }
         ]
     }
 };
