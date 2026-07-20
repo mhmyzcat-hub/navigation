@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const galleryKey = document.body.dataset.galleryKey;
+    const galleryKey = new URLSearchParams(window.location.search).get("category");
     const gallery = recommendationGalleries[galleryKey];
 
     if (!gallery) {
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
     }
 
-    document.title = gallery.title + " - 叉烧虫导航站";
+    document.title = gallery.title + " - " + siteConfig.title;
 
     const title = document.getElementById("galleryTitle");
     const count = document.getElementById("galleryCount");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     initGalleryTheme();
     initLightbox();
-    initGalleryCopyButton();
+    initGalleryContact(gallery);
 
     try {
         if (gallery.sections) {
@@ -172,6 +172,9 @@ function renderGalleryError() {
     const title = document.getElementById("galleryTitle");
     const empty = document.getElementById("galleryEmpty");
     title.textContent = "图片分类不存在";
+    document.getElementById("galleryCount").textContent = "";
+    empty.querySelector("strong").textContent = "未找到该推荐分类";
+    empty.querySelector("p").textContent = "请返回开款推荐并重新选择分类。";
     empty.hidden = false;
 }
 
@@ -231,12 +234,19 @@ function updateGalleryThemeButton(button) {
     button.setAttribute("aria-label", isDark ? "切换浅色模式" : "切换深色模式");
 }
 
-function initGalleryCopyButton() {
+function initGalleryContact(gallery) {
+    const banner = document.getElementById("galleryContactBanner");
     const button = document.getElementById("galleryWechatCopy");
 
-    if (!button) {
+    if (!gallery.showContact || !siteConfig.recommendationContact) {
         return;
     }
+
+    const contact = siteConfig.recommendationContact;
+    document.getElementById("galleryContactName").textContent = contact.name;
+    button.dataset.copy = contact.wechat;
+    button.innerHTML = contact.wechat + " <span>复制微信</span>";
+    banner.hidden = false;
 
     const originalText = button.innerHTML;
 

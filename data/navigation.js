@@ -1,7 +1,11 @@
 const siteConfig = {
     title: "叹木宁导航站",
     copyright: "© 2026 叹木宁导航站",
-    footerNotice: "本网站分享的内容仅供参考，不构成任何法律意见或建议"
+    footerNotice: "本网站分享的内容仅供参考，不构成任何法律意见或建议",
+    recommendationContact: {
+        name: "叹木宁",
+        wechat: "tanmuning-277"
+    }
 };
 
 const featuredPath = {
@@ -141,42 +145,42 @@ const navigationData = [
                 title: "单西",
                 action: {
                     type: "link",
-                    value: "recommend-suit.html"
+                    value: "recommend.html?category=suit"
                 }
             },
             {
                 title: "单马甲",
                 action: {
                     type: "link",
-                    value: "recommend-vest-tailcoat.html"
+                    value: "recommend.html?category=vestTailcoat"
                 }
             },
             {
                 title: "两件套",
                 action: {
                     type: "link",
-                    value: "recommend-suit-set.html"
+                    value: "recommend.html?category=suitSet"
                 }
             },
             {
                 title: "三件套",
                 action: {
                     type: "link",
-                    value: "recommend-three-piece.html"
+                    value: "recommend.html?category=threePiece"
                 }
             },
             {
                 title: "西裤",
                 action: {
                     type: "link",
-                    value: "recommend-trousers.html"
+                    value: "recommend.html?category=trousers"
                 }
             },
             {
                 title: "衬衫",
                 action: {
                     type: "link",
-                    value: "recommend-shirt.html"
+                    value: "recommend.html?category=shirt"
                 }
             }
         ]
@@ -203,3 +207,42 @@ const navigationData = [
         ]
     }
 ];
+
+/* 开款图片由 GitHub Pages 自动生成清单，无需登记文件名。 */
+const recommendationGalleries = {
+    suit: {
+        title: "单西",
+        folder: "assets/recommendations/suit"
+    },
+    trousers: {
+        title: "西裤",
+        showContact: true,
+        sections: [
+            { title: "裤长", folder: "assets/recommendations/trousers/length" },
+            { title: "裤型", folder: "assets/recommendations/trousers/fit" },
+            { title: "面料", folder: "assets/recommendations/trousers/fabric" },
+            { title: "纹样", folder: "assets/recommendations/trousers/pattern" }
+        ]
+    },
+    suitSet: {
+        title: "两件套",
+        folder: "assets/recommendations/suit-set"
+    },
+    threePiece: {
+        title: "三件套",
+        folder: "assets/recommendations/three-piece"
+    },
+    shirt: {
+        title: "衬衫",
+        folder: "assets/recommendations/shirt"
+    },
+    vestTailcoat: {
+        title: "单马甲",
+        showContact: true,
+        sections: [
+            { title: "领型", folder: "assets/recommendations/vest-tailcoat/collar" },
+            { title: "扣型", folder: "assets/recommendations/vest-tailcoat/button" },
+            { title: "面料", folder: "assets/recommendations/vest-tailcoat/fabric" }
+        ]
+    }
+};
