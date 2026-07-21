@@ -2,7 +2,11 @@
 
 图片请分别放入以下文件夹：
 
-- `suit/`：单西
+- `suit/british/`：单西－英式
+- `suit/italian/`：单西－意式
+- `suit/american/`：单西－美式
+- `suit/japanese/`：单西－日式
+- `suit/french/`：单西－法式
 - `vest-tailcoat/`：单马甲
 - `suit-set/`：两件套
 - `three-piece/`：三件套

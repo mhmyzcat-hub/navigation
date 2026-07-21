@@ -212,7 +212,14 @@ const navigationData = [
 const recommendationGalleries = {
     suit: {
         title: "单西",
-        folder: "assets/recommendations/suit"
+        showContact: true,
+        sections: [
+            { title: "英式", folder: "assets/recommendations/suit/british" },
+            { title: "意式", folder: "assets/recommendations/suit/italian" },
+            { title: "美式", folder: "assets/recommendations/suit/american" },
+            { title: "日式", folder: "assets/recommendations/suit/japanese" },
+            { title: "法式", folder: "assets/recommendations/suit/french" }
+        ]
     },
     trousers: {
         title: "西裤",
