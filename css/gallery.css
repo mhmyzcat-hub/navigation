@@ -276,27 +276,27 @@
 }
 
 .gallery-disclaimer {
-    margin-top: 48px;
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: 13px;
-    background: var(--surface);
+    margin-top: 42px;
+    padding: 16px 2px 0;
+    border-top: 1px solid var(--border);
     color: var(--muted);
 }
 
 .gallery-disclaimer h2 {
-    margin-bottom: 9px;
-    color: var(--text);
-    font-size: 15px;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .gallery-disclaimer p {
-    font-size: 12px;
-    line-height: 1.8;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
 }
 
 .gallery-disclaimer p + p {
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .gallery-lightbox[hidden] {
@@ -406,7 +406,7 @@ body.dark .gallery-scarce-badge {
     }
 
     .gallery-disclaimer {
-        margin-top: 34px;
-        padding: 17px;
+        margin-top: 28px;
+        padding-top: 14px;
     }
 }
