@@ -275,6 +275,30 @@
     line-height: 1.7;
 }
 
+.gallery-disclaimer {
+    margin-top: 48px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--surface);
+    color: var(--muted);
+}
+
+.gallery-disclaimer h2 {
+    margin-bottom: 9px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.gallery-disclaimer p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.gallery-disclaimer p + p {
+    margin-top: 6px;
+}
+
 .gallery-lightbox[hidden] {
     display: none;
 }
@@ -379,5 +403,10 @@ body.dark .gallery-scarce-badge {
 
     .gallery-card-info {
         padding: 12px;
+    }
+
+    .gallery-disclaimer {
+        margin-top: 34px;
+        padding: 17px;
     }
 }
