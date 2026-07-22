@@ -134,7 +134,23 @@ function renderGalleryCard(grid, gallery, item, index) {
         .replace(/[【\[（(]?\s*稀缺\s*[】\]）)]?/g, "")
         .replace(/^[-_·@\s]+|[-_·@\s]+$/g, "")
         .trim();
-    const imageTitle = cleanName || "参考款式 " + (index + 1);
+    const keywordSeparatorIndex = gallery.showKeywords
+        ? cleanName.search(/[：:]/)
+        : -1;
+    const imageTitle = (
+        keywordSeparatorIndex >= 0
+            ? cleanName.slice(0, keywordSeparatorIndex)
+            : cleanName
+    ).trim() || "参考款式 " + (index + 1);
+    const keywords = keywordSeparatorIndex >= 0
+        ? cleanName
+            .slice(keywordSeparatorIndex + 1)
+            .split(/[、,，@]/)
+            .map(function (keyword) {
+                return keyword.trim();
+            })
+            .filter(Boolean)
+        : [];
     card.setAttribute("aria-label", "查看" + imageTitle);
 
     const image = document.createElement("img");
@@ -160,6 +176,13 @@ function renderGalleryCard(grid, gallery, item, index) {
     }
 
     info.appendChild(titleRow);
+
+    if (keywords.length) {
+        const keywordText = document.createElement("small");
+        keywordText.className = "gallery-card-keywords";
+        keywordText.textContent = keywords.join(" · ");
+        info.appendChild(keywordText);
+    }
 
     card.appendChild(image);
     card.appendChild(info);

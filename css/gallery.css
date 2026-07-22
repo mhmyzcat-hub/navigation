@@ -255,6 +255,12 @@
     font-size: 12px;
 }
 
+.gallery-card-keywords {
+    display: block;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
 .gallery-empty {
     padding: 70px 24px;
     border: 1px dashed #cdd8e7;

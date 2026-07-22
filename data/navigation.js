@@ -213,6 +213,7 @@ const recommendationGalleries = {
     suit: {
         title: "单西",
         showContact: true,
+        showKeywords: true,
         sections: [
             { title: "英式", folder: "assets/recommendations/suit/british" },
             { title: "意式", folder: "assets/recommendations/suit/italian" },
