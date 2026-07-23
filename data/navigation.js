@@ -149,7 +149,7 @@ const navigationData = [
                 }
             },
             {
-                title: "单马甲",
+                title: "马甲",
                 action: {
                     type: "link",
                     value: "recommend.html?category=vestTailcoat"
@@ -224,7 +224,7 @@ const recommendationGalleries = {
         folder: "assets/recommendations/shirt"
     },
     vestTailcoat: {
-        title: "单马甲",
+        title: "马甲",
         showContact: true,
         sections: [
             { title: "领型", folder: "assets/recommendations/vest-tailcoat/collar" },

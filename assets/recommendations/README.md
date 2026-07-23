@@ -8,7 +8,7 @@
 - `suit/fits/`：西装/西装套装－流行版型
 - `suit/details/`：西装/西装套装－流行细节
 - `suit/pitfalls/`：西装/西装套装－避坑方向
-- `vest-tailcoat/`：单马甲
+- `vest-tailcoat/`：马甲
 - `trousers/length/`：西裤－裤长
 - `trousers/fit/`：西裤－裤型
 - `trousers/fabric/`：西裤－面料
