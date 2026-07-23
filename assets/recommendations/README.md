@@ -22,7 +22,7 @@
 - `shirt/colors/`：衬衫－推荐颜色
 - `shirt/fabrics/`：衬衫－推荐面料
 - `shirt/details/`：衬衫－推荐细节
-- `shirt/paused/`：衬衫－暂缓开发
+- `shirt/paused/`：衬衫－不建议开发
 
 图片放入文件夹并推送到 GitHub 后，网页会自动读取，无需登记文件名或修改代码。
 

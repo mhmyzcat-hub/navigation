@@ -227,7 +227,7 @@ const recommendationGalleries = {
             { title: "推荐颜色", folder: "assets/recommendations/shirt/colors" },
             { title: "推荐面料", folder: "assets/recommendations/shirt/fabrics" },
             { title: "推荐细节", folder: "assets/recommendations/shirt/details" },
-            { title: "暂缓开发", folder: "assets/recommendations/shirt/paused" }
+            { title: "不建议开发", folder: "assets/recommendations/shirt/paused" }
         ]
     },
     vestTailcoat: {
