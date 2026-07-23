@@ -201,11 +201,12 @@ const recommendationGalleries = {
         showContact: true,
         showKeywords: true,
         sections: [
+            { title: "组合形式", folder: "assets/recommendations/suit/combinations" },
             { title: "推荐开发方向", folder: "assets/recommendations/suit/development" },
             { title: "推荐颜色", folder: "assets/recommendations/suit/colors" },
             { title: "推荐面料", folder: "assets/recommendations/suit/fabrics" },
             { title: "推荐细节", folder: "assets/recommendations/suit/details" },
-            { title: "暂缓开发", folder: "assets/recommendations/suit/paused" }
+            { title: "不建议开发", folder: "assets/recommendations/suit/paused" }
         ]
     },
     trousers: {

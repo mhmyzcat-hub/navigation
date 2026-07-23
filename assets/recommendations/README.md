@@ -2,11 +2,12 @@
 
 图片请分别放入以下文件夹：
 
+- `suit/combinations/`：西装 / 西装套装－组合形式
 - `suit/development/`：西装 / 西装套装－推荐开发方向
 - `suit/colors/`：西装 / 西装套装－推荐颜色
 - `suit/fabrics/`：西装 / 西装套装－推荐面料
 - `suit/details/`：西装 / 西装套装－推荐细节
-- `suit/paused/`：西装 / 西装套装－暂缓开发
+- `suit/paused/`：西装 / 西装套装－不建议开发
 - `trousers/development/`：西裤 / 正装裤－推荐开发方向
 - `trousers/colors/`：西裤 / 正装裤－推荐颜色
 - `trousers/fabrics/`：西裤 / 正装裤－推荐面料
