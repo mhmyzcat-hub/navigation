@@ -142,7 +142,7 @@ const navigationData = [
         layout: "list",
         items: [
             {
-                title: "单西",
+                title: "西装/西装套装",
                 action: {
                     type: "link",
                     value: "recommend.html?category=suit"
@@ -153,20 +153,6 @@ const navigationData = [
                 action: {
                     type: "link",
                     value: "recommend.html?category=vestTailcoat"
-                }
-            },
-            {
-                title: "两件套",
-                action: {
-                    type: "link",
-                    value: "recommend.html?category=suitSet"
-                }
-            },
-            {
-                title: "三件套",
-                action: {
-                    type: "link",
-                    value: "recommend.html?category=threePiece"
                 }
             },
             {
@@ -211,15 +197,16 @@ const navigationData = [
 /* 开款图片由 GitHub Pages 自动生成清单，无需登记文件名。 */
 const recommendationGalleries = {
     suit: {
-        title: "单西",
+        title: "西装/西装套装",
         showContact: true,
         showKeywords: true,
         sections: [
-            { title: "英式", folder: "assets/recommendations/suit/british" },
-            { title: "意式", folder: "assets/recommendations/suit/italian" },
-            { title: "美式", folder: "assets/recommendations/suit/american" },
-            { title: "日式", folder: "assets/recommendations/suit/japanese" },
-            { title: "法式", folder: "assets/recommendations/suit/french" }
+            { title: "组合", folder: "assets/recommendations/suit/combinations" },
+            { title: "流行颜色", folder: "assets/recommendations/suit/colors" },
+            { title: "流行风格", folder: "assets/recommendations/suit/styles" },
+            { title: "流行版型", folder: "assets/recommendations/suit/fits" },
+            { title: "流行细节", folder: "assets/recommendations/suit/details" },
+            { title: "避坑方向", folder: "assets/recommendations/suit/pitfalls" }
         ]
     },
     trousers: {
@@ -231,14 +218,6 @@ const recommendationGalleries = {
             { title: "面料", folder: "assets/recommendations/trousers/fabric" },
             { title: "纹样", folder: "assets/recommendations/trousers/pattern" }
         ]
-    },
-    suitSet: {
-        title: "两件套",
-        folder: "assets/recommendations/suit-set"
-    },
-    threePiece: {
-        title: "三件套",
-        folder: "assets/recommendations/three-piece"
     },
     shirt: {
         title: "衬衫",
