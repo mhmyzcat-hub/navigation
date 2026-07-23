@@ -2,18 +2,26 @@
 
 图片请分别放入以下文件夹：
 
-- `suit/combinations/`：西装/西装套装－组合
-- `suit/colors/`：西装/西装套装－流行颜色
-- `suit/styles/`：西装/西装套装－流行风格
-- `suit/fits/`：西装/西装套装－流行版型
-- `suit/details/`：西装/西装套装－流行细节
-- `suit/pitfalls/`：西装/西装套装－避坑方向
-- `vest-tailcoat/`：马甲
-- `trousers/length/`：西裤－裤长
-- `trousers/fit/`：西裤－裤型
-- `trousers/fabric/`：西裤－面料
-- `trousers/pattern/`：西裤－纹样
-- `shirt/`：衬衫
+- `suit/development/`：西装 / 西装套装－推荐开发方向
+- `suit/colors/`：西装 / 西装套装－推荐颜色
+- `suit/fabrics/`：西装 / 西装套装－推荐面料
+- `suit/details/`：西装 / 西装套装－推荐细节
+- `suit/paused/`：西装 / 西装套装－暂缓开发
+- `trousers/development/`：西裤 / 正装裤－推荐开发方向
+- `trousers/colors/`：西裤 / 正装裤－推荐颜色
+- `trousers/fabrics/`：西裤 / 正装裤－推荐面料
+- `trousers/details/`：西裤 / 正装裤－推荐细节
+- `trousers/paused/`：西裤 / 正装裤－暂缓开发
+- `vest-tailcoat/development/`：马甲－推荐开发方向
+- `vest-tailcoat/colors/`：马甲－推荐颜色
+- `vest-tailcoat/fabrics/`：马甲－推荐面料
+- `vest-tailcoat/details/`：马甲－推荐细节
+- `vest-tailcoat/paused/`：马甲－暂缓开发
+- `shirt/development/`：衬衫－推荐开发方向
+- `shirt/colors/`：衬衫－推荐颜色
+- `shirt/fabrics/`：衬衫－推荐面料
+- `shirt/details/`：衬衫－推荐细节
+- `shirt/paused/`：衬衫－暂缓开发
 
 图片放入文件夹并推送到 GitHub 后，网页会自动读取，无需登记文件名或修改代码。
 
@@ -32,10 +40,10 @@
 
 网页会显示标题“双排扣西装”，并在标题旁自动添加“·稀缺”标签。
 
-西装/西装套装图片可以在名称后使用中文冒号和顿号填写关键词：
+西装 / 西装套装图片可以在名称后使用中文冒号和顿号填写关键词：
 
 - `01-英伦乡村：粗花呢、棕、橄榄绿、灰、秋冬、复古、户外休闲.jpg`
 
-西装/西装套装页面会显示标题“英伦乡村”，并在标题下方显示“粗花呢 · 棕 · 橄榄绿 · 灰 · 秋冬 · 复古 · 户外休闲”。关键词功能仅用于西装/西装套装，其他推荐类目的文件名不会按此规则拆分。
+西装 / 西装套装页面会显示标题“英伦乡村”，并在标题下方显示“粗花呢 · 棕 · 橄榄绿 · 灰 · 秋冬 · 复古 · 户外休闲”。关键词功能仅用于西装 / 西装套装，其他推荐类目的文件名不会按此规则拆分。
 
 如果只是更新图片，保持文件名不变，直接覆盖原图片再推送即可。

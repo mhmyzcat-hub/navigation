@@ -142,7 +142,7 @@ const navigationData = [
         layout: "list",
         items: [
             {
-                title: "西装/西装套装",
+                title: "西装 / 西装套装",
                 action: {
                     type: "link",
                     value: "recommend.html?category=suit"
@@ -156,7 +156,7 @@ const navigationData = [
                 }
             },
             {
-                title: "西裤",
+                title: "西裤 / 正装裤",
                 action: {
                     type: "link",
                     value: "recommend.html?category=trousers"
@@ -197,39 +197,47 @@ const navigationData = [
 /* 开款图片由 GitHub Pages 自动生成清单，无需登记文件名。 */
 const recommendationGalleries = {
     suit: {
-        title: "西装/西装套装",
+        title: "西装 / 西装套装",
         showContact: true,
         showKeywords: true,
         sections: [
-            { title: "组合", folder: "assets/recommendations/suit/combinations" },
-            { title: "流行颜色", folder: "assets/recommendations/suit/colors" },
-            { title: "流行风格", folder: "assets/recommendations/suit/styles" },
-            { title: "流行版型", folder: "assets/recommendations/suit/fits" },
-            { title: "流行细节", folder: "assets/recommendations/suit/details" },
-            { title: "避坑方向", folder: "assets/recommendations/suit/pitfalls" }
+            { title: "推荐开发方向", folder: "assets/recommendations/suit/development" },
+            { title: "推荐颜色", folder: "assets/recommendations/suit/colors" },
+            { title: "推荐面料", folder: "assets/recommendations/suit/fabrics" },
+            { title: "推荐细节", folder: "assets/recommendations/suit/details" },
+            { title: "暂缓开发", folder: "assets/recommendations/suit/paused" }
         ]
     },
     trousers: {
-        title: "西裤",
+        title: "西裤 / 正装裤",
         showContact: true,
         sections: [
-            { title: "裤长", folder: "assets/recommendations/trousers/length" },
-            { title: "裤型", folder: "assets/recommendations/trousers/fit" },
-            { title: "面料", folder: "assets/recommendations/trousers/fabric" },
-            { title: "纹样", folder: "assets/recommendations/trousers/pattern" }
+            { title: "推荐开发方向", folder: "assets/recommendations/trousers/development" },
+            { title: "推荐颜色", folder: "assets/recommendations/trousers/colors" },
+            { title: "推荐面料", folder: "assets/recommendations/trousers/fabrics" },
+            { title: "推荐细节", folder: "assets/recommendations/trousers/details" },
+            { title: "暂缓开发", folder: "assets/recommendations/trousers/paused" }
         ]
     },
     shirt: {
         title: "衬衫",
-        folder: "assets/recommendations/shirt"
+        sections: [
+            { title: "推荐开发方向", folder: "assets/recommendations/shirt/development" },
+            { title: "推荐颜色", folder: "assets/recommendations/shirt/colors" },
+            { title: "推荐面料", folder: "assets/recommendations/shirt/fabrics" },
+            { title: "推荐细节", folder: "assets/recommendations/shirt/details" },
+            { title: "暂缓开发", folder: "assets/recommendations/shirt/paused" }
+        ]
     },
     vestTailcoat: {
         title: "马甲",
         showContact: true,
         sections: [
-            { title: "领型", folder: "assets/recommendations/vest-tailcoat/collar" },
-            { title: "扣型", folder: "assets/recommendations/vest-tailcoat/button" },
-            { title: "款式", folder: "assets/recommendations/vest-tailcoat/fabric" }
+            { title: "推荐开发方向", folder: "assets/recommendations/vest-tailcoat/development" },
+            { title: "推荐颜色", folder: "assets/recommendations/vest-tailcoat/colors" },
+            { title: "推荐面料", folder: "assets/recommendations/vest-tailcoat/fabrics" },
+            { title: "推荐细节", folder: "assets/recommendations/vest-tailcoat/details" },
+            { title: "暂缓开发", folder: "assets/recommendations/vest-tailcoat/paused" }
         ]
     }
 };
