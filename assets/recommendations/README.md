@@ -7,22 +7,18 @@
 - `suit/colors/`：西装 / 西装套装－推荐颜色
 - `suit/fabrics/`：西装 / 西装套装－推荐面料
 - `suit/details/`：西装 / 西装套装－推荐细节
-- `suit/paused/`：西装 / 西装套装－不建议开发
 - `trousers/development/`：西裤 / 正装裤－推荐开发方向
 - `trousers/colors/`：西裤 / 正装裤－推荐颜色
 - `trousers/fabrics/`：西裤 / 正装裤－推荐面料
 - `trousers/details/`：西裤 / 正装裤－推荐细节
-- `trousers/paused/`：西裤 / 正装裤－暂缓开发
 - `vest-tailcoat/development/`：马甲－推荐开发方向
 - `vest-tailcoat/colors/`：马甲－推荐颜色
 - `vest-tailcoat/fabrics/`：马甲－推荐面料
 - `vest-tailcoat/details/`：马甲－推荐细节
-- `vest-tailcoat/paused/`：马甲－暂缓开发
 - `shirt/development/`：衬衫－推荐开发方向
 - `shirt/colors/`：衬衫－推荐颜色
 - `shirt/fabrics/`：衬衫－推荐面料
 - `shirt/details/`：衬衫－推荐细节
-- `shirt/paused/`：衬衫－不建议开发
 
 图片放入文件夹并推送到 GitHub 后，网页会自动读取，无需登记文件名或修改代码。
 

@@ -205,8 +205,7 @@ const recommendationGalleries = {
             { title: "推荐开发方向", folder: "assets/recommendations/suit/development" },
             { title: "推荐颜色", folder: "assets/recommendations/suit/colors" },
             { title: "推荐面料", folder: "assets/recommendations/suit/fabrics" },
-            { title: "推荐细节", folder: "assets/recommendations/suit/details" },
-            { title: "不建议开发", folder: "assets/recommendations/suit/paused" }
+            { title: "推荐细节", folder: "assets/recommendations/suit/details" }
         ]
     },
     trousers: {
@@ -216,8 +215,7 @@ const recommendationGalleries = {
             { title: "推荐开发方向", folder: "assets/recommendations/trousers/development" },
             { title: "推荐颜色", folder: "assets/recommendations/trousers/colors" },
             { title: "推荐面料", folder: "assets/recommendations/trousers/fabrics" },
-            { title: "推荐细节", folder: "assets/recommendations/trousers/details" },
-            { title: "暂缓开发", folder: "assets/recommendations/trousers/paused" }
+            { title: "推荐细节", folder: "assets/recommendations/trousers/details" }
         ]
     },
     shirt: {
@@ -226,8 +224,7 @@ const recommendationGalleries = {
             { title: "推荐开发方向", folder: "assets/recommendations/shirt/development" },
             { title: "推荐颜色", folder: "assets/recommendations/shirt/colors" },
             { title: "推荐面料", folder: "assets/recommendations/shirt/fabrics" },
-            { title: "推荐细节", folder: "assets/recommendations/shirt/details" },
-            { title: "不建议开发", folder: "assets/recommendations/shirt/paused" }
+            { title: "推荐细节", folder: "assets/recommendations/shirt/details" }
         ]
     },
     vestTailcoat: {
@@ -237,8 +234,7 @@ const recommendationGalleries = {
             { title: "推荐开发方向", folder: "assets/recommendations/vest-tailcoat/development" },
             { title: "推荐颜色", folder: "assets/recommendations/vest-tailcoat/colors" },
             { title: "推荐面料", folder: "assets/recommendations/vest-tailcoat/fabrics" },
-            { title: "推荐细节", folder: "assets/recommendations/vest-tailcoat/details" },
-            { title: "暂缓开发", folder: "assets/recommendations/vest-tailcoat/paused" }
+            { title: "推荐细节", folder: "assets/recommendations/vest-tailcoat/details" }
         ]
     }
 };
